@@ -1,0 +1,7 @@
+<!--pages/catalog/catalog.wxml-->
+
+<view class='container catalog'>
+  <view class='catalog-item' wx:for="{{catalogData}}"  wx:key="{{index}}">
+    <navigator class='link' url="{{'/pages/book/book?id=' +item._id + '&bookId=' +bookId}}">{{item.title}}</navigator>
+  </view>
+</view>
