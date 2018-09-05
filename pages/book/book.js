@@ -9,7 +9,10 @@ Page({
     title: "",
     bookId: "",
     catalog: [],
-    isShow: false
+    font:40,
+    isShow: false,
+    isLoading: false,
+    index:""
   },
 
 //启动加载
@@ -25,12 +28,20 @@ Page({
 
 //获取文章接口数据
   getData() {
+    this.setData({
+      isLoading: true
+    })
     fetch.get(`/article/${this.data.titleId}`).then(res => {
       let data = app.towxml.toJson(res.data.article.content, 'markdown');
 
       this.setData({
         article: data,
-        title: res.data.title
+        title: res.data.title,
+        isLoading: false
+      })
+    }).catch(err=>{
+      this.setData({
+        isLoading: false
       })
     })
   },
@@ -54,9 +65,56 @@ Page({
   handleGet(event){
     const id = event.currentTarget.dataset.id
     this.setData({
-      titleId:id
+      titleId:id,
+      // 点击后隐藏
+      isShow:false
     })
     this.getData()
-  }
+  },
+  handleAdd(){
+    this.setData({
+      font:this.data.font+2
+    })
+  },
+  hangdleRuduce() {
+    if(this.data.font<=24){
+      wx.showModal({
+        title:"警告",
+        content:"字体太小看不清楚哦",
+        showCancel:false
+      })
+    }else{
+      this.setData({
+        font: this.data.font - 2
+      })
+    }
+  },
+  hangleNext(){
+    let catalog = this.data.catalog
+    if(catalog[this.data.index + 1]){
+      this.setData({
+        titleId : catalog[this.data.index+1]._id
+      })
+      this.getData()
+    }else{
+      wx.showToast({
+        title: '已经是最后一章了',
+      })
+    }
+  },
+   handlePrev(){
+     let catalog = this.data.catalog
+     if(this.data.index - 1<0){
+       wx.showToast({
+         title: '已经是第一章',
+       })
+     }else{
+       this.setData({
+         titleId:catalog[this.data.index -1]._id
+       })
+       this.getData()
+     }
+   }
+
 
 })

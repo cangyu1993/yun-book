@@ -3,6 +3,12 @@
 @import '/towxml/style/theme/light.wxss';
 @import '/towxml/style/theme/dark.wxss';
 @import '/static/iconfont/iconfont.wxss';
+
+.article-neirong{
+  padding-bottom: 80rpx;
+}
+
+
 .book .menu{
   position: fixed;
   bottom: 0;
@@ -37,10 +43,17 @@
   border: 1px solid #f1f1f1;
   z-index: 996;
   width: 680rpx;
+  transform: translate3d(-100%,0,0);
+  transition: transform .5s
 }
 
+.active{
+  transform: translate3d(0,0,0);
+}
+
+
 .catalog-menu .catalog-item{
-  font-size: 12px;
+  font-size: 14px;
   color: #333;
   line-height: 70rpx;
   height: 70rpx;
@@ -60,7 +73,10 @@
   z-index: 888;
   background: rgba(0, 0, 0, 0.2);
 }
-
+.loading{
+  position: fixed;
+  top: 20%;
+}
 
 
 

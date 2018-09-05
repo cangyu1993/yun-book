@@ -1,18 +1,21 @@
 <!--index.wxml-->
 <view class='container'>
-  <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
-    <block wx:for="{{swiperData}}" wx:key="{{index}}">
-      <swiper-item bindtap="jumpBook" data-id="{{item.book._id}}">
-        <image src="{{item.img}}" class="slide-image" />
-      </swiper-item>
-    </block>
-  </swiper>
 
-  <view class="main-content">
-    <view class="content-item" wx:for="{{mainContent}}" wx:key="{{index}}">
-      <view class="title">{{item.title}}</view>
+  <image src='/static/img/loading01.svg' class="loading" wx:if="{{isLoading}}"></image>
+  <view wx:else>
+    <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
+      <block wx:for="{{swiperData}}" wx:key="{{index}}">
+        <swiper-item bindtap="jumpBook" data-id="{{item.book._id}}">
+          <image src="{{item.img}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
 
-      <view class="content" wx:for="{{item.books}}" wx:key="{{index}}">
+    <view class="main-content">
+      <view class="content-item" wx:for="{{mainContent}}" wx:key="{{index}}">
+        <view class="title">{{item.title}}</view>
+
+        <view class="content" wx:for="{{item.books}}" wx:key="{{index}}">
           <view class="box-l">
             <image src="{{item.img}}" class="img"></image>
           </view>
@@ -30,6 +33,7 @@
               </view>
             </view>
           </view>
+        </view>
       </view>
     </view>
   </view>

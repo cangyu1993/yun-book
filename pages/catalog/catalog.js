@@ -3,13 +3,14 @@ import { fetch } from "../../utils/util.js"
 Page({
   data: {
       bookId:"",
-      catalogData:[]
+      catalogData:[],
+     
   },
 
   onLoad: function (options) {
       //  console.log(options)
        this.setData({
-         bookId:options.id
+         bookId:options.id,
        })
        this.getData()
   },
@@ -18,6 +19,7 @@ Page({
     fetch.get(`/titles/${this.data.bookId}`).then(res =>{
       // console.log(res)
       this.setData({
+      
         catalogData:res.data
       })
     })

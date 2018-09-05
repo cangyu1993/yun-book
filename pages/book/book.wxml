@@ -1,26 +1,33 @@
 <!--pages/book/book.wxml-->
+
+
 <import src="/towxml/entry.wxml" />
 
 <view class='book'>
 
-  <view>
-    <template is="entry"  data="{{...article}}" />
-  </view>
+  <!-- 插入过度动画 -->
 
-
-  <scroll-view scroll-y class='catalog-menu' wx:if="{{isShow}}">
-    <view class='catalog-item' wx:for="{{catalog}}" wx:key="{{index}}" bindtap='handleGet' data-id="{{item._id}}">
-      {{item.title}}
+  <image src='/static/img/loading01.svg' class="loading" wx:if="{{isLoading}}"></image>
+    <!-- 显示文章内容 -->
+    <view class='article-neirong' style="{{'font-size:' + font + 'rpx'}}" wx:else>
+      <template is="entry" data="{{...article}}" />
     </view>
-  </scroll-view>
-  <view class='mask' wx:if="{{isShow}}" bindtap='toggleCatalog'></view>
 
-  <!-- 菜单 -->
-  <view class='menu'>
-    <view class='iconfont icon-prev'></view>
-    <view class='iconfont icon-mulu' bindtap='toggleCatalog'></view>
-    <view class='iconfont icon-zitifangda'></view>
-    <view class='iconfont icon-zitisuoxiao'></view>
-    <view class='iconfont icon-next'></view>
-  </view>
+    <!-- 按钮拉取目录 -->
+    <scroll-view scroll-y class="catalog-menu {{isShow? 'active':''}}">
+      <view class='catalog-item' wx:for="{{catalog}}" wx:key="{{index}}" bindtap='handleGet' data-id="{{item._id}}">
+        {{item.title}}
+      </view>
+    </scroll-view>
+    <view class='mask' wx:if="{{isShow}}" bindtap='toggleCatalog'></view>
+
+
+    <!-- 底部菜单 -->
+    <view class='menu'>
+      <view class='iconfont icon-prev' bindtap='handlePrev'></view>
+      <view class='iconfont icon-mulu' bindtap='toggleCatalog'></view>
+      <view class='iconfont icon-zitifangda' bindtap='handleAdd'></view>
+      <view class='iconfont icon-zitisuoxiao' bindtap='hangdleRuduce'></view>
+      <view class='iconfont icon-next' bindtap='hangleNext'></view>
+    </view>
 </view>
