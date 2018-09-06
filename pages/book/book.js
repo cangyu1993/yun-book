@@ -11,7 +11,7 @@ Page({
     catalog: [],
     font:40,
     isShow: false,
-    isLoading: false,
+    isLoading:false,
     index:""
   },
 
@@ -29,7 +29,8 @@ Page({
 //获取文章接口数据
   getData() {
     this.setData({
-      isLoading: true
+      isLoading: true,
+      isShow:false
     })
     fetch.get(`/article/${this.data.titleId}`).then(res => {
       let data = app.towxml.toJson(res.data.article.content, 'markdown');
@@ -37,7 +38,8 @@ Page({
       this.setData({
         article: data,
         title: res.data.title,
-        isLoading: false
+        isLoading: false,
+        index: res.data.article.index
       })
     }).catch(err=>{
       this.setData({
@@ -93,7 +95,7 @@ Page({
     let catalog = this.data.catalog
     if(catalog[this.data.index + 1]){
       this.setData({
-        titleId : catalog[this.data.index+1]._id
+        titleId : catalog[this.data.index + 1]._id
       })
       this.getData()
     }else{
@@ -104,7 +106,7 @@ Page({
   },
    handlePrev(){
      let catalog = this.data.catalog
-     if(this.data.index - 1<0){
+     if(this.data.index - 1 < 0){
        wx.showToast({
          title: '已经是第一章',
        })

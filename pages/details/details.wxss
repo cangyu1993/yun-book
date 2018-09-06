@@ -1,35 +1,42 @@
 /* pages/details/details.wxss */
-.details .book-details{
-   padding: 20rpx 20rpx 40rpx 20rpx;
-   border-bottom: 8rpx solid #e9e9e9;
+
+.details .book-details {
+  padding: 20rpx 20rpx 40rpx 20rpx;
+  border-bottom: 8rpx solid #e9e9e9;
 }
-.book-t{
+
+.book-t {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
   color: #444;
 }
-.book-t .title{
+
+.book-t .title {
   font-size: 14px;
   font-weight: 700;
   color: #333;
 }
-.book-t .img{
-   width: 220rpx;
-   height: 280rpx;
+
+.book-t .img {
+  width: 220rpx;
+  height: 280rpx;
 }
-.book-t .main-msg{
+
+.book-t .main-msg {
   margin-left: 40rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.book-b{
+
+.book-b {
   display: flex;
   justify-content: space-between;
   margin-top: 50rpx;
 }
-.book-b .btn{
+
+.book-b .btn {
   color: #333;
   margin: 0;
   width: 300rpx;
@@ -39,24 +46,36 @@
 }
 
 /* 简介 */
-.book-desc{
+
+.book-desc {
   padding: 30rpx 20rpx;
   border-bottom: 2px solid #e9e9e9;
   font-size: 12px;
   line-height: 1.5;
 }
-.book-desc .title{
+
+.book-desc .title {
   font-weight: 700;
   font-size: 15px;
 }
-.book-desc .desc-main{
+
+.book-desc .desc-main {
   font-size: 12px;
   color: #333;
   margin-top: 50rpx;
+  /* 显示5行多余的隐藏加... */
+  height: 200rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 
 /* 查看目录 */
-.book-catalog{
+
+.book-catalog {
   padding: 0 20rpx;
   line-height: 100rpx;
   height: 100rpx;
@@ -64,36 +83,41 @@
   justify-content: space-between;
   border-bottom: 1px solid #e9e9e9;
 }
-.book-catalog .catelog-l{
+
+.book-catalog .catelog-l {
   width: 300rpx;
   display: flex;
   justify-content: space-between;
-
 }
-.book-catalog .catalog-l .title{
+
+.book-catalog .catalog-l .title {
   font-size: 15px;
   font-weight: 700;
-  color: #333
+  color: #333;
 }
-.catalogs{
+
+.catalogs {
   font-size: 10px;
   color: #444;
 }
-.updata-time{
+
+.updata-time {
   font-size: 10px;
   color: #444;
 }
-.read-btn-wrap{
+
+.read-btn-wrap {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   padding: 20rpx;
-  box-shadow: 0 0 2px 2px rgba(0,0,0, .2);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 }
-.read-btn-wrap .b-btn{
-    background-color: #409eff;
-    color: #fff;
-    font-size: 12px;
-    margin: 0;
+
+.read-btn-wrap .b-btn {
+  background-color: #409eff;
+  color: #fff;
+  font-size: 12px;
+  margin: 0;
 }

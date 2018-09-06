@@ -6,7 +6,7 @@ Page({
     bookData:{}
   },
   onLoad: function (options) {
-    //  console.log(options)
+     console.log(options)
      this.setData({
        bookId:options.id
      })
@@ -26,5 +26,6 @@ Page({
       url:`/pages/catalog/catalog?id=${this.data.bookId}`
     })
   },
+
   onShareAppMessage: function () {}
 })

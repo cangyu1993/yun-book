@@ -53,11 +53,59 @@
 .box-r .author {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 10px;
+}
+.box-r .author .update-time{
+  margin-right: 15rpx;
+  color: red;
+}
+.box-r .author .category{
+  margin-right: 15rpx;
+}
+.box-r .author .many{
+  color: red;
 }
 
-/* .loading{
-  position: fixed;
-  top: 20%;
-} */
 
+.loading-more{
+  display: flex;
+  justify-content: center;
+  height: 160rpx;
+  align-items: center;
+}
+.loading-more .loadmore-img{
+  height: 50rpx;
+  width: 50rpx;
+}
+.loading-more text{
+  position: relative;
+  z-index: 998;
+  margin-left: 10rpx;
+}
+.no-more{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 160rpx;
+  margin-top: 40rpx;
+  background: #f1f1f1;
+  color: #888;
+}
+.no-more-text{
+  position: relative;
+  z-index: 998;
+  width: 500rpx;
+  background: #f1f1f1;
+}
+.line{
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600rpx;
+  height: 1rpx;
+  background: #e9e9e9;
+}

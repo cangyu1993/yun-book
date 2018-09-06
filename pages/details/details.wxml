@@ -21,7 +21,7 @@
     <view class='desc-main'>{{bookData.data.desc}}</view>
   </view>
 
-  <view class='book-catalog'>
+  <view class='book-catalog' bindtap="jumpCatalog">
 
     <view class='catelog-l'>
       <view class='show-catelog'>查看目录</view>
