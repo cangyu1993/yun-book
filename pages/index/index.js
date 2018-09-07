@@ -65,7 +65,7 @@ Page({
     })
   },
 
-  //获取更多数据(下啦刷新获得的书籍)
+  //获取更多数据(上啦刷新获得的书籍)
   getMoreContent() {
     return new Promise(resolve => {
       fetch.get('/category/books', {

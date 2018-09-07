@@ -1,0 +1,57 @@
+/* pages/myheart/myheart.wxss */
+
+.blue-part {
+  padding: 20rpx 20rpx;
+  background: skyblue;
+}
+
+.blue-part .head {
+  display: flex;
+}
+
+.blue-part .head .img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.blue-part .head .name {
+  margin-left: 20rpx;
+  font-size: 14px;
+}
+
+.blue-part .head .name-show {
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+  font-size: 12px;
+}
+
+.blue-1 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.blue-1 .blue-1-1 {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.blue-1 .blue-1-2 {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.nums{
+  padding: 10rpx 20rpx;
+}
+.banben{
+ text-align: center;
+ color: rgb(18, 240, 166);
+ font-style: italic;
+}
+.big-img .img-1{
+  width: 100%;
+  margin: 0 auto;
+}

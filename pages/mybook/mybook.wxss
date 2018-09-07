@@ -1,0 +1,71 @@
+/* pages/mybook/mybook.wxss */
+
+.all-view {
+  padding: 0 20rpx;
+  /* background: #87ceeb; */
+}
+
+.box {
+  display: flex;
+  padding: 10rpx 0;
+}
+
+.box .box-img .img {
+  height: 400rpx;
+  width: 300rpx;
+}
+
+.box .box-r {
+  padding-left: 10rpx;
+}
+
+.box .box-r .title {
+  font-size: 14px;
+}
+
+.box .box-r .catalog {
+  padding: 10rpx 0;
+  font-size: 12px;
+}
+
+.box .box-r .history-1 {
+  display: flex;
+  padding: 10rpx 0;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.box .box-r .history-2 {
+  display: flex;
+  padding: 10rpx 0;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.box .box-r .btn {
+  display: flex;
+  margin-top: 85rpx;
+  justify-content: space-between;
+}
+
+.box .box-r .btn .btn-1 {
+  font-size: 12px;
+  line-height: 60rpx;
+  text-align: center;
+  height: 60rpx;
+  width: 180rpx;
+}
+
+.box .box-r .btn .btn-2 {
+  font-size: 12px;
+  line-height: 60rpx;
+  text-align: center;
+  height: 60rpx;
+  width: 180rpx;
+}
+
+.end {
+  margin-top: 20rpx;
+  font-size: 12px;
+  text-align: center;
+}

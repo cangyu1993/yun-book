@@ -1,0 +1,27 @@
+<!--pages/myheart/myheart.wxml-->
+<view class='blue-part'>
+  <view class='head'>
+    <view>
+      <image src='{{userInfo.avatarUrl}}' class='img'></image>
+    </view>
+    <view>
+      <view class='name'>{{userInfo.nickName}}</view>
+      <view class='name-show'>醒，亦在人间，梦，亦在人间</view>
+    </view>
+  </view>
+  <view class='blue-1'>
+    <view class='blue-1-1'>
+      <view class='nums'>2</view>
+      <view>收藏</view>
+    </view>
+    <view class='blue-1-2'>
+      <view class='nums'>4</view>
+      <view>关注</view>
+    </view>
+  </view>
+</view>
+
+<view class='big-img'>
+  <image src='../../static/img/tt.png' class='img-1'></image>
+  <view class='banben'>云舒2.0</view>
+</view>
