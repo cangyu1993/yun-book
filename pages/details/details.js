@@ -13,7 +13,6 @@ Page({
       bookId: options.id
     })
     this.getData()
-    // this.handleCollect()
   },
   //获取数据
   getData() {

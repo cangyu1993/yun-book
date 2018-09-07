@@ -18,12 +18,14 @@ Page({
 //启动加载
   onLoad: function(options) {
     // console.log(options)
+    // console.log(options)
     this.setData({
       titleId: options.id,
-      bookId: options.bookId
+      bookId: options.bookId,
     })
     this.getData()
     this.getCatalog()
+    this.turnArr(options)
   },
 
 //获取文章接口数据
@@ -116,7 +118,17 @@ Page({
        })
        this.getData()
      }
-   }
+   },
+   //options转数组
+  turnArr(options){
+    var oldObj = options
+    var newArr = []
+    for( var i in oldObj){
+      newArr.push(oldObj[i])
+    }
+    console.log(newArr)
+    console.log(newArr.length)
+  }
 
 
 })

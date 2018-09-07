@@ -10,8 +10,8 @@
     </view>
   </view>
   <view class='blue-1'>
-    <view class='blue-1-1'>
-      <view class='nums'>2</view>
+    <view class='blue-1-1' bindtap='goldHouse'>
+      <view class='nums'>{{booknums}}</view>
       <view>收藏</view>
     </view>
     <view class='blue-1-2'>

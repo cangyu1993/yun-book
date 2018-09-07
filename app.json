@@ -5,7 +5,8 @@
     "pages/catalog/catalog",
     "pages/book/book",
     "pages/mybook/mybook",
-    "pages/myheart/myheart"
+    "pages/myheart/myheart",
+    "pages/goldhouse/goldhouse"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,26 +14,26 @@
     "navigationBarTitleText": "宝鉴",
     "navigationBarTextStyle": "black"
   },
-    "tabBar": {
-      "list": [
-        {
-          "pagePath": "pages/index/index",
-          "text": "首页",
-          "iconPath": "/static/img/tab1-1.png",
-          "selectedIconPath": "/static/img/tab1-2.png"
-        },
-        {
-          "pagePath": "pages/mybook/mybook",
-          "text": "我的书籍",
-          "iconPath": "/static/img/tab2-1.png",
-          "selectedIconPath": "/static/img/tab2-2.png"
-        },
-        {
-          "pagePath": "pages/myheart/myheart",
-          "text": "个人中心",
-          "iconPath": "/static/img/tab3-1.png",
-          "selectedIconPath": "/static/img/tab3-2.png"
-        }
-      ]
-    }
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/img/tab1-1.png",
+        "selectedIconPath": "/static/img/tab1-2.png"
+      },
+      {
+        "pagePath": "pages/mybook/mybook",
+        "text": "我的书籍",
+        "iconPath": "/static/img/tab2-1.png",
+        "selectedIconPath": "/static/img/tab2-2.png"
+      },
+      {
+        "pagePath": "pages/myheart/myheart",
+        "text": "个人中心",
+        "iconPath": "/static/img/tab3-1.png",
+        "selectedIconPath": "/static/img/tab3-2.png"
+      }
+    ]
+  }
 }
