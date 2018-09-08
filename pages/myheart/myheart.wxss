@@ -29,6 +29,7 @@
 .blue-1 {
   display: flex;
   justify-content: space-around;
+  /* border-top: 1rpx solid #ccc; */
 }
 
 .blue-1 .blue-1-1 {

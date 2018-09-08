@@ -23,5 +23,5 @@
 
 <view class='big-img'>
   <image src='../../static/img/tt.png' class='img-1'></image>
-  <view class='banben'>云舒2.0</view>
+  <view class='banben'>云书2.0</view>
 </view>

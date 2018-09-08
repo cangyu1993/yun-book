@@ -1,1 +1,46 @@
 /* pages/goldhouse/goldhouse.wxss */
+
+.gold {
+  padding: 10rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gold .gold-house {
+  /* padding: 0 10rpx; */
+  width: 300rpx;
+  height: 600rpx;
+}
+
+.gold .gold-house .img {
+  width: 300rpx;
+}
+
+.gold .gold-house .title {
+  font-size: 12px;
+  text-align: center;
+}
+.gold .gold-house .btn{
+  font-size: 14px;
+}
+.end {
+  margin-top: 20rpx;
+  height: 20rpx;
+  line-height: 20rpx;
+  text-align: center;
+}
+
+.end .line {
+  position: relative;
+  bottom: 10rpx;
+  display: inline-block;
+  width: 200rpx;
+  border-top: 1rpx solid #ccc;
+}
+
+.end .txt {
+  font-size: 14px;
+  padding: 0 50rpx;
+  vertical-align: middle;
+}

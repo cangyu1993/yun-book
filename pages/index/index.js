@@ -15,8 +15,7 @@ Page({
 
 
   onLoad() {
-    this.getData()
-    this.getContent()
+    this.getAllData()
     login()
   },
 
@@ -24,24 +23,36 @@ Page({
   //获取轮播图封装为Promise
   getData() {
     return new Promise((resolve, reject) => {
-      this.setData({
-        isLoading: true
-      })
       fetch.get('/swiper').then(res => {
         // console.log(res)
         resolve()
         this.setData({
           swiperData: res.data,
-          isLoading: false
         })
       }).catch(err => {
         reject()
+      })
+    })
+  },
+//封装两个promise
+  getAllData() {
+    return new Promise(resolve => {
+      this.setData({
+        isLoading: true
+      })
+      Promise.all([this.getData(), this.getContent()]).then(() => {
+        resolve()
+        this.setData({
+          isLoading: false
+        })
+      }).catch(err => {
         this.setData({
           isLoading: false
         })
       })
     })
   },
+
 
   // 获取图书内容封装为Promise
   getContent() {
@@ -67,32 +78,30 @@ Page({
 
   //获取更多数据(上啦刷新获得的书籍)
   getMoreContent() {
-    return new Promise(resolve => {
-      fetch.get('/category/books', {
+      return fetch.get('/category/books', {
         pn: this.data.pn
-      }).then(res => {
-        let newArr = [...this.data.mainContent, ...res.data]
-        this.setData({
-          mainContent: newArr
-        })
-        resolve(res)
       })
-    })
   },
 
   //下啦刷新同时加载两个Promise
   onPullDownRefresh() {
-    Promise.all([this.getData(), this.getContent()]).then(() => {
+    this.getAllData().then(()=>{
       wx.stopPullDownRefresh();
-    })
+    }) 
   },
+ 
+//上拉加载页数
   onReachBottom() {
     if (this.data.hasMore) {
       this.setData({
         pn: this.data.pn + 1
       })
+      console.log(this.data.pn)
       this.getMoreContent().then(res => {
-        // console.log(res.data)
+        let newArr = [...this.data.mainContent, ...res.data]
+        this.setData({
+          mainContent: newArr
+        })
         if (res.data.length < 2) {
           this.setData({
             hasMore: false
@@ -100,5 +109,16 @@ Page({
         }
       })
     }
-  }
+  },
+
+
+
+
+
+
+
+
+
+
+
 })

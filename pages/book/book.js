@@ -17,8 +17,7 @@ Page({
 
 //启动加载
   onLoad: function(options) {
-    // console.log(options)
-    // console.log(options)
+    console.log(options)
     this.setData({
       titleId: options.id,
       bookId: options.bookId,

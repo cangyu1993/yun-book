@@ -1,5 +1,6 @@
 {
         "navigationBarTitleText": "阅读列表",
         "navigationBarTextStyle": "black",
-        "navigationBarBackgroundColor": "#87ceeb"
+        "navigationBarBackgroundColor": "#87ceeb",
+        "enablePullDownRefresh": true
 }

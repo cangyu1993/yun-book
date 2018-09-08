@@ -16,13 +16,17 @@ Page({
   },
   //获取数据
   getData() {
-    fetch.get(`/book/${this.data.bookId}`).then(res => {
-      console.log(res)
-      this.setData({
-        bookData: res,
+    return new Promise((resolve, reject) => {
+      fetch.get(`/book/${this.data.bookId}`).then(res => {
+        console.log(res)
+        resolve()
+        this.setData({
+          bookData: res,
+        })
       })
     })
   },
+
   jumpCatalog() {
     wx.navigateTo({
       url: `/pages/catalog/catalog?id=${this.data.bookId}`
@@ -49,6 +53,15 @@ Page({
         }).then(res => {})
       }
     })
+  },
+  //下啦刷新
+  onPullDownRefresh() {
+    this.getData().then(() => {
+      wx.stopPullDownRefresh();
+    }).catch(() => {
+      console.log("页面走丢了...")
+    })
   }
+
 
 })

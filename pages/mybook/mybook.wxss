@@ -45,6 +45,7 @@
 .box .box-r .btn {
   display: flex;
   margin-top: 85rpx;
+  width: 400rpx;
   justify-content: space-between;
 }
 
@@ -64,8 +65,21 @@
   width: 180rpx;
 }
 
-.end {
-  margin-top: 20rpx;
-  font-size: 12px;
-  text-align: center;
+.end{
+     margin-top: 10rpx;
+     height: 20rpx;
+     line-height: 20rpx;
+     text-align: center;
+}
+.end .line{
+  position: relative;
+  bottom: 10rpx;
+  display: inline-block;
+  width: 200rpx;
+  border-top: 1rpx solid #ccc;
+}
+.end .txt{
+  font-size: 14px;
+  padding: 0 50rpx;
+  vertical-align: middle;
 }

@@ -9,23 +9,25 @@
       <view class='catalog'>书籍{{item.title.index}}/{{item.title.total}}</view>
       <view class='history-1'>
         <view class='history-length'>66666666666</view>
-        <view class='history-mach'>已看7%</view>
+        <view class='history-mach' bindtap='lookpersent' data-index='{{item.title.index}}'
+              data-total='{{item.title.total}}'
+        >已看7%</view>
       </view>
       <view class='history-2'>
-        <view class='history-who'>上次查看：2.4在MAC OS X 上</view>
+        <view class='history-who'>上次查看：{{item.title.title}}</view>
         <view class='history-time'>一天前</view>
       </view>
       <view class='btn'>
-        <button class='btn-1' bindtap='jumpbook' data-id='{{item.title._id}}'>继续阅读</button>
+        <button class='btn-1' bindtap='jumpbook' data-id='{{item.title._id}}' data-bookid='{{item.title.bookId}}'>继续阅读</button>
         <button class='btn-2' bindtap='jumpdetails' data-id='{{item.title.bookId}}'>查看文档</button>
       </view>
     </view>
   </view>
 
 
-
-
-
-
-<view class='end'>已加载全部</view>
+<view class='end'>
+    <text class='line'></text>
+    <text class='txt'>已是我的全部了</text>
+    <text class='line'></text>
+</view>
 </view>
