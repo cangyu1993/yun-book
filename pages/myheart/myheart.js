@@ -37,6 +37,13 @@ Page({
     wx.navigateTo({
       url: '/pages/goldhouse/goldhouse',
     })
+  },
+  onPullDownRefresh() {
+    this.getData().then(() => {
+      wx.stopPullDownRefresh();
+    }).catch(() => {
+      console.log("页面走丢了...")
+    })
   }
 
 

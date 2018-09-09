@@ -8,10 +8,10 @@
       <view class='title'>{{item.book.title}}</view>
       <view class='catalog'>书籍{{item.title.index}}/{{item.title.total}}</view>
       <view class='history-1'>
-        <view class='history-length'>66666666666</view>
-        <view class='history-mach' bindtap='lookpersent' data-index='{{item.title.index}}'
-              data-total='{{item.title.total}}'
-        >已看7%</view>
+        <view class='history-length'>
+              进度条
+        </view>
+        <view class='history-mach'>已看{{ ((item.title.index+1)/(item.title.total+1)*100) }}%</view>
       </view>
       <view class='history-2'>
         <view class='history-who'>上次查看：{{item.title.title}}</view>
@@ -25,9 +25,9 @@
   </view>
 
 
-<view class='end'>
+  <view class='end'>
     <text class='line'></text>
     <text class='txt'>已是我的全部了</text>
     <text class='line'></text>
-</view>
+  </view>
 </view>

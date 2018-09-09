@@ -34,6 +34,18 @@ Page({
       })
     })
   },
+  // 获取图书内容封装为Promise
+  getContent() {
+    return new Promise((resolve, reject) => {
+      fetch.get('/category/books').then(res => {
+        // console.log(res)
+        resolve()
+        this.setData({
+          mainContent: res.data
+        })
+      })
+    })
+  },
 //封装两个promise
   getAllData() {
     return new Promise(resolve => {
@@ -54,18 +66,7 @@ Page({
   },
 
 
-  // 获取图书内容封装为Promise
-  getContent() {
-    return new Promise((resolve, reject) => {
-      fetch.get('/category/books').then(res => {
-        // console.log(res)
-        resolve()
-        this.setData({
-          mainContent: res.data
-        })
-      })
-    })
-  },
+
 
 
   //跳转获取id
