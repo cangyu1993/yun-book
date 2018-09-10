@@ -55,11 +55,11 @@ Page({
       Promise.all([this.getData(), this.getContent()]).then(() => {
         resolve()
         this.setData({
-          isLoading: false
+          isLoading: false,
         })
       }).catch(err => {
         this.setData({
-          isLoading: false
+          isLoading: false,
         })
       })
     })
@@ -87,6 +87,10 @@ Page({
   //下啦刷新同时加载两个Promise
   onPullDownRefresh() {
     this.getAllData().then(()=>{
+      this.setData({
+        hasMore: true,
+        pn: 1
+      })
       wx.stopPullDownRefresh();
     }) 
   },

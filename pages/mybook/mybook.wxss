@@ -34,6 +34,10 @@
   justify-content: space-between;
   font-size: 10px;
 }
+.box .box-r .history-1 .history-length{
+  width: 300rpx;
+  margin-bottom: 2rpx;
+}
 
 .box .box-r .history-2 {
   display: flex;

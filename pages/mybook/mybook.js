@@ -14,6 +14,9 @@ Page({
     return new Promise((resolve, reject) => {
       fetch.get("/readList").then(res => {
         console.log(res)
+        res.data.forEach(item=>{
+          item.percent = Math.floor((item.title.index+1)/(item.title.total+1)*100)
+        })
         this.setData({
           bookpast: res.data,
         })

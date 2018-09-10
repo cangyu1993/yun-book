@@ -9,9 +9,9 @@
       <view class='catalog'>书籍{{item.title.index}}/{{item.title.total}}</view>
       <view class='history-1'>
         <view class='history-length'>
-              进度条
+          <progress percent="{{item.percent}}" show-info="true" activeColor="skyblue" backgroundColor="pink" active="true" active-mode="backwards" stroke-width="5" />
         </view>
-        <view class='history-mach'>已看{{ ((item.title.index+1)/(item.title.total+1)*100) }}%</view>
+        <view class='history-mach'>已看{{item.percent}}%</view>
       </view>
       <view class='history-2'>
         <view class='history-who'>上次查看：{{item.title.title}}</view>

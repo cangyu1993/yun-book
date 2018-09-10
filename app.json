@@ -24,7 +24,7 @@
       },
       {
         "pagePath": "pages/mybook/mybook",
-        "text": "我的书籍",
+        "text": "阅读历史",
         "iconPath": "/static/img/tab2-1.png",
         "selectedIconPath": "/static/img/tab2-2.png"
       },
