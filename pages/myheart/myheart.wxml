@@ -22,6 +22,7 @@
 </view>
 
 <view class='big-img'>
-  <image src='../../static/img/339.jpg' class='img-1'></image>
-  <!-- <view class='banben'>云书2.0</view> -->
+  <image src='../../static/img/339.jpg' class='img-1' bindtap='chooseImage'></image>
 </view>
+
+<image-cropper wx:if='{{showCut}}' id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut"></image-cropper>
