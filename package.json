@@ -1,0 +1,24 @@
+{
+  "name": "yun-book",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cangyu1993/yun-book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cangyu1993/yun-book/issues"
+  },
+  "homepage": "https://github.com/cangyu1993/yun-book#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "@vant/weapp": "^1.0.7",
+    "production": "0.0.2"
+  }
+}

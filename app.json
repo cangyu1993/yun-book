@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/myheart/myheart",
     "pages/index/index",
     "pages/details/details",
     "pages/catalog/catalog",
     "pages/book/book",
     "pages/mybook/mybook",
-    "pages/myheart/myheart",
     "pages/goldhouse/goldhouse"
   ],
   "window": {

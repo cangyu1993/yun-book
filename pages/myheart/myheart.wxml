@@ -2,7 +2,7 @@
 <view class='blue-part'>
   <view class='head'>
     <view>
-      <image src='{{userInfo.avatarUrl}}' class='img'></image>
+      <image src='{{userInfo.avatarUrl}}' class='img' bindtap='chooseImages'></image>
     </view>
     <view>
       <view class='name'>{{userInfo.nickName}}</view>
@@ -22,7 +22,12 @@
 </view>
 
 <view class='big-img'>
-  <image src='../../static/img/339.jpg' class='img-1' bindtap='chooseImage'></image>
+  <image src='../../static/img/339.jpg' class='img-1'></image>
 </view>
-
-<image-cropper wx:if='{{showCut}}' id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut"></image-cropper>
+<view class="cutheater" wx:if='{{showCut}}'>
+  <image-cropper id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut"></image-cropper>
+  <view class="twoBtns">
+    <button type="warn" bindtap="primary" bindtap="submitCancel"> 取消 </button>
+    <button type="primary" bindtap="primary" bindtap="submit"> 确定 </button>
+  </view>
+</view>

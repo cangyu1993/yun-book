@@ -7,9 +7,10 @@ Page({
     userInfo: {},
     booknums: "",
     src: '',
-    width: 250,//宽度
-    height: 250,//高度
-    showCut:false,//裁剪框显示
+    width: 150,//宽度
+    height: 150,//高度
+    showCut: false,//裁剪框显示
+    cropper: {},//裁剪框实例
   },
 
 
@@ -22,8 +23,7 @@ Page({
         })
       }
     }),
-      this.getData(),
-      this.cropper = this.selectComponent("#image-cropper")
+      this.getData()
   },
   //裁剪框初始化完成调用
   cropperload(e) {
@@ -32,6 +32,7 @@ Page({
   //图片加载完成
   loadimage(e) {
     console.log("图片加载完成", e.detail);
+    console.log(this.cropper)
     //重置图片角度、缩放、位置
     this.cropper.imgReset();
   },
@@ -45,18 +46,36 @@ Page({
     })
   },
   //点击头像实现上传本地图片
-  chooseImage(){
+  chooseImages() {
+    const that = this
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
-        this.setData({
+        that.setData({
           src: res.tempFilePaths,
           showCut: true
         })
+        that.cropper = that.selectComponent("#image-cropper")
       }
+    })
+  },
+  //获取裁剪的图片
+  submit() {
+    this.cropper.getImg((obj) => {
+      this.setData({
+        userInfo: { ...this.userInfo, avatarUrl: obj.url },
+        showCut: false
+      })
+    });
+  },
+  //取消裁剪
+  submitCancel() {
+    this.setData({
+      showCut: false,
+      src: ''
     })
   },
   //获取收藏总数
